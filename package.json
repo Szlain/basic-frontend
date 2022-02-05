@@ -1,5 +1,11 @@
 {
   "name": "@newride/basic-frontend",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "fastify": "^3.27.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.15"
+  }
 }
