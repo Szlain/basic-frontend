@@ -1,0 +1,39 @@
+{
+  "root": "packages/basic-frontend",
+  "sourceRoot": "packages/basic-frontend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/basic-frontend",
+        "main": "packages/basic-frontend/src/index.ts",
+        "tsConfig": "packages/basic-frontend/tsconfig.app.json",
+        "assets": ["packages/basic-frontend/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "basic-frontend:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/basic-frontend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/basic-frontend"],
+      "options": {
+        "jestConfig": "packages/basic-frontend/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
